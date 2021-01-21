@@ -26,13 +26,13 @@ const dicing = () => {
     return random>5 ? 5 : random;
 };
 
-// const removeOriginalDiceClass = ( tagName , className) => {
-//     tagName.classList.remove(className);
-// };
+const removeClass = ( tagName , className) => {
+    tagName.classList.remove(className);
+};
 
-// const addClass = ( tagName , className ) => {
-//     tagName.classList.add(className);
-// };
+const addClass = ( tagName , className ) => {
+    tagName.classList.add(className);
+};
 
 const adjustOpacity = ( tagName , oValue ) => {
     tagName.style.opacity = oValue;
@@ -62,6 +62,7 @@ p1Btn.addEventListener("click",() => {
     if ( p2Value !== -1 ) {
         winnerTag.textContent = finalResult( p1Value,p2Value,player1Name,player2Name);
     }
+    addClass(dice1ITag,"rotateDice");
 });
 
 p2Btn.addEventListener("click",() => {
@@ -70,6 +71,7 @@ p2Btn.addEventListener("click",() => {
     if ( p1Value !== -1 ) {
         winnerTag.textContent = finalResult( p1Value,p2Value,player1Name,player2Name);
     }
+    addClass(dice2ITag,"rotateDice");
 });
 
 diceAgainBtn.addEventListener("click",() => {
@@ -77,6 +79,8 @@ diceAgainBtn.addEventListener("click",() => {
     p2Value=-1;
     removeAndAddClass( dice1ITag,dice[6]);
     removeAndAddClass( dice2ITag,dice[6]);
+    removeClass(dice1ITag,"rotateDice");
+    removeClass(dice2ITag,"rotateDice");
     winnerTag.textContent = "Waiting for winnner!";
     hideElement(diceAgainBtn);
     hideElement(winnerIcon);

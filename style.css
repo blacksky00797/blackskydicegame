@@ -40,6 +40,10 @@ body {
     justify-content: center;
 }
 
+.rotateDice {
+    transform: rotate(360deg);
+}
+
 .diceImg {
     font-size: 250px;
     color: white;
@@ -79,4 +83,12 @@ body {
 .diceAgainBtn {
     text-align: center;
     visibility: hidden;
+}
+
+.player1,.player2 {
+    transition: all 3.5s ease;
+}
+
+.dice1 i,.dice2 i {
+    transition: all 1s ease;
 }
