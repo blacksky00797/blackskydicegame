@@ -8,6 +8,9 @@ const dice = [
                 "fa-dice"
             ];
 
+
+const player1 = document.querySelector(".player1");
+const player2 = document.querySelector(".player2");
 const dice1ITag = document.querySelector(".dice1 i");
 const dice2ITag = document.querySelector(".dice2 i");
 const p1Btn = document.querySelector(".btn1");
@@ -15,6 +18,7 @@ const p2Btn = document.querySelector(".btn2");
 const winnerTag = document.querySelector(".winner");
 const diceAgainBtn = document.querySelector(".diceAgainBtn");
 const winnerIcon = document.querySelector(".winnerIcon");
+
 
 
 const dicing = () => {
@@ -29,6 +33,10 @@ const dicing = () => {
 // const addClass = ( tagName , className ) => {
 //     tagName.classList.add(className);
 // };
+
+const adjustOpacity = ( tagName , oValue ) => {
+    tagName.style.opacity = oValue;
+}
 
 const removeAndAddClass = ( tagName , className ) => {
     for ( let id=0 ; id < dice.length ; id++ ) {
@@ -72,6 +80,8 @@ diceAgainBtn.addEventListener("click",() => {
     winnerTag.textContent = "Waiting for winnner!";
     hideElement(diceAgainBtn);
     hideElement(winnerIcon);
+    adjustOpacity(player1,"1");
+    adjustOpacity(player2,"1");
     
 });
 
@@ -79,5 +89,7 @@ const finalResult = ( p1 , p2 , p1Name , p2Name ) => {
     unhideElement(diceAgainBtn);
     unhideElement(winnerIcon);
     if ( p1===p2 ) hideElement(winnerIcon);
+    else if ( p1 > p2 ) adjustOpacity(player2,"0.5");
+    else if ( p1 < p2 ) adjustOpacity(player1,"0.5");
     return p1>p2 ? p1Name + " is the winner!" : p1===p2 ? "It's draw!" : p2Name + " is the winner!";
 }

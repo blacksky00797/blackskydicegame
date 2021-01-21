@@ -1,5 +1,6 @@
 body {
     background-color: lightskyblue;
+    /* background-color: #5B8D95; */
 }
 
 .container {
@@ -29,6 +30,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: lightskyblue;
+    
 }
 
 .player2 {
