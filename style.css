@@ -1,0 +1,79 @@
+body {
+    background-color: lightskyblue;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Potta One', cursive;
+}
+
+.playerContainer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.playerLabel {
+    margin-top: 30px;
+}
+
+.player1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.player2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.diceImg {
+    font-size: 250px;
+    color: white;
+    text-align: center;
+}
+
+.playerLabel {
+    font-size: 50px;
+    text-align: center;
+}
+
+.buttonContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttonContainer button {
+    font-size: 20px;
+    width: 200px;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+/* .winner {
+    display: inline-block;
+} */
+.winnerIcon {
+    visibility: hidden;
+}
+
+.winnerContainer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.diceAgainBtn {
+    text-align: center;
+    visibility: hidden;
+}
